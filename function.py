@@ -1,6 +1,5 @@
 
 
-from source import *
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.remote.webdriver import WebDriver as RemoteWebDriver
 from selenium import webdriver

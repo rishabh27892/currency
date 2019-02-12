@@ -10,11 +10,11 @@ from subprocess import call
 from os import path
 from web_browse import run_web_browse_test
 from web_close import run_web_close_test
-
+from nav_page import run_nav_page_test
 
 sys.stdout.flush()
 
-ip = "https://currencypay.com/home/"
+ip = "https://www.currencycap.com/"
 
 from driverF import webDriver
 print("Running Firefox Driver")
@@ -22,6 +22,7 @@ runDriver = webDriver()
 
 # running tests
 run_web_browse_test(runDriver, ip)
+run_nav_page_test(runDriver)
 run_web_close_test(runDriver)
 
 # cleaning up files
@@ -34,8 +35,8 @@ if path.exists('function.pyc'):
 if path.exists('web_browse.pyc'):
     call(["rm", "web_browse.pyc"])
 
-if path.exists('source.pyc'):
-    call(["rm", "source.pyc"])
+if path.exists('nav_page.pyc'):
+    call(["rm", "nav_page.pyc"])
 
 if path.exists('web_close.pyc'):
     call(["rm", "web_close.pyc"])

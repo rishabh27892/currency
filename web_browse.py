@@ -30,7 +30,8 @@ try:
 except ImportError:
     import unittest
 
-xpaths = {'firstpagecontent': '//*[@id="banner_video"]/div/div[1]/div[1]/h2/span',
+xpaths = {'firstpagecontentpay': '//*[@id="banner_video"]/div/div[1]/div[1]/h2/span',
+          'firstpagecontentcap': '/html/body/header/div[2]/a'
           }
 
 
@@ -43,11 +44,11 @@ class web_browse_test(unittest.TestCase):
         try:
             print ("opening the browser and the site")
             # ui_content
-            ui_element=driver.find_element_by_xpath(xpaths['firstpagecontent'])
+            ui_element=driver.find_element_by_xpath(xpaths['firstpagecontentcap'])
             # get the weather data
             page_data=ui_element.text
             # assert response
-            self.assertTrue("Start selling more by optimizing" in page_data)
+            self.assertTrue("877-358-4595" in page_data)
             driver.execute_script("document.body.style.zoom='50 %'")
             #taking screenshot
             function.screenshot(driver, self)
